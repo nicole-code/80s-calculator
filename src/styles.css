@@ -4,24 +4,39 @@
 
 body {
   margin: 0;
-  background: #8789C0;
-
+  background: #EFE4CF;
 }
 
+.page-title {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  font-size: 3rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: black;
+
+}
 .calculator-grid {
   display: grid;
-  margin-top: 2rem;
   grid-template-columns: repeat(4, 6rem);
   grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
   justify-content: center;
 }
+
 
 .calculator-grid > button {
   cursor: pointer;
   font-size: 2rem;
-  border: 1px solid white;
   outline: none;
-  background-color: #C2CAE8;
+  border-radius: 1rem;
+  border: none;
+  background-color: #E3D7CA;
+}
+
+#clear {
+  background-color: #DE6228;
 }
 
 .calculator-grid > button:hover,
@@ -34,9 +49,11 @@ body {
   grid-column: span 2;
 }
 
+
 .output {
   grid-column: 1 / -1;
-  background-color: gainsboro;
+  background-color: #BFBFA1;
+  border: 2px black solid;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -54,4 +71,64 @@ body {
 .output .current-operand {
   color: black;
   font-size: 2.5rem;
+}
+
+
+
+
+.strings {
+  position: fixed;
+  width: 100%;
+  left: 0;
+}
+
+.string {
+  margin: 20px 0;
+  width: 0%;
+  height: 3px;
+  background-color: #fff9fe;
+  transform: rotate(-5deg);
+  box-shadow: -0.1vw 0vw 0.25vw #DE6228, -0.2vw 0vw 0.25vw #DE6228, -0.4vw 0vw 0.25vw #DE6228, -0.1vw 0vw 1vw #DE6228, -0.2vw 0vw 0.8vw #DE6228, -0.4vw 0vw 0.8vw #DE6228, 0.2vw 0vw 0.5vw #DE6228, -0.1vw 0vw 10vw #DE6228, -0.2vw 0vw 10vw #DE6228, -0.4vw 0vw 10vw #DE6228; 
+  animation: stringsLoad 4s forwards;
+
+  &--2 {
+    animation-delay: 0.3s;
+  }
+  &--3 {
+    animation-delay: 0.6s;
+  }  
+}
+
+@keyframes stringsLoad {
+  0% {
+    width: 0;
+  }
+  10% {
+    box-shadow: -0.2vw 0vw 0.5vw #DE6228, -0.4vw 0vw 0.5vw #DE6228, -0.8vw 0vw 0.5vw #DE6228, -0.2vw 0vw 2vw #DE6228, -0.4vw 0vw 1.6vw #DE6228, -0.8vw 0vw 1.6vw #DE6228, 0.4vw 0vw 1vw #DE6228, -0.2vw 0vw 20vw #DE6228, -0.4vw 0vw 20vw #DE6228, -0.8vw 0vw 20vw #DE6228; 
+  }
+  20% {
+    height: 12px;
+  }
+  40% {
+    height: 6px;
+  }  
+  50% {
+    box-shadow: -0.2vw 0vw 0.5vw #DE6228;
+  }  
+  70% {
+    box-shadow: -0.2vw 0vw 0.5vw #DE6228, -0.4vw 0vw 0.5vw #DE6228, -0.8vw 0vw 0.5vw #DE6228, -0.2vw 0vw 2vw #DE6228, -0.4vw 0vw 1.6vw #DE6228, -0.8vw 0vw 1.6vw #DE6228, 0.4vw 0vw 1vw #DE6228, -0.2vw 0vw 20vw #DE6228, -0.4vw 0vw 20vw #DE6228, -0.8vw 0vw 20vw #DE6228;     
+  }
+  80% {
+    box-shadow: -0.2vw 0vw 0.5vw #DE6228;
+  } 
+  90% {
+    box-shadow: -0.2vw 0vw 0.5vw #DE6228, -0.4vw 0vw 0.5vw #DE6228, -0.8vw 0vw 0.5vw #DE6228, -0.2vw 0vw 2vw #DE6228, -0.4vw 0vw 1.6vw #DE6228, -0.8vw 0vw 1.6vw #DE6228, 0.4vw 0vw 1vw #DE6228, -0.2vw 0vw 20vw #DE6228, -0.4vw 0vw 20vw #DE6228, -0.8vw 0vw 20vw #DE6228;     
+  }
+  99% {
+    width: 105%; 
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
