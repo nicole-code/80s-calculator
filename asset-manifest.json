@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/80s-calculator/static/css/main.2b774fec.css",
+    "main.js": "/80s-calculator/static/js/main.ee091acd.js",
+    "index.html": "/80s-calculator/index.html",
+    "main.2b774fec.css.map": "/80s-calculator/static/css/main.2b774fec.css.map",
+    "main.ee091acd.js.map": "/80s-calculator/static/js/main.ee091acd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2b774fec.css",
+    "static/js/main.ee091acd.js"
+  ]
+}
